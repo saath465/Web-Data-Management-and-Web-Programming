@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web Mashup: Display House Prices on a Map</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="map.js"></script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRy8GbBL2Pm3pCfUDJH9SCHlgNFUWuTXQ">
+    </script>
+  </head>
+  <body onload="initialize();" style="background-color:SkyBlue">
+    <h2 align="center"> House Evaluation </h2>
+    <h4 align="center"> Search for the house address by entering address or clicking on the map </h4>
+    <p>Enter the comma seperated house address </p>
+    <form style="position:relative; left:90px">
+       <label>House address: <input type="text" id="address"/></label><br/><br/>
+       <input type="button" onclick="sendRequest();" value="Find"/>
+       <input type="button" onclick="clearForm();" value="Clear"/>
+    </form><br/>
+      <p> If there is no Output on the textBox, You have probably entered or selected an apartment complex or public space which can not be evaluated at this point</p>
+    <h4 style="position:relative; left:830px">Previous Search Results</h4>
+    <div style="width:80%;">
+      <div id="gmap" style="width: 600px; height: 500px; float:left;"></div><br/>
+      <div id="output" style="float:right; margin-left:50px;">
+        &nbsp;</div>
+    </div>
+  </body>
+</html>
